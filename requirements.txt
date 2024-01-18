@@ -1,0 +1,10 @@
+pandas 
+mlflow
+dvc[all]
+numpy
+scikit-learn
+matplotlib
+ensure
+python-box
+pydantic_settings
+-e .
