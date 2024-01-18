@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from taxi_fare_prediction import logger
+from github_labeler.utils.custom_logging import logger
 import json
 import joblib
 from ensure import ensure_annotations
