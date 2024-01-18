@@ -1,0 +1,9 @@
+stages:
+  data_ingestion:
+    cmd: python src/github_labeler/pipelines/data_pipeline.py
+    deps:
+      - src/github_labeler/pipelines/data_pipeline.py
+      - src/github_labeler/core/config.yaml
+    outs:
+      - data/processed/github_issues_test.tsv
+      - data/processed/github_issues_train.tsv

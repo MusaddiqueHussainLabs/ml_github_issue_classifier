@@ -8,6 +8,9 @@ from github_labeler.data.data_ingestion import DataIngestion
 # from taxi_fare_prediction.data.data_preprocessing import DataPreProcessing
 # from taxi_fare_prediction.data.data_transformation import DataTransformation
 
+
+STAGE_NAME = "Data Ingestion stage"
+
 class DataIngestionTrainingPipeline:
     def __init__(self):
         pass
@@ -18,3 +21,13 @@ class DataIngestionTrainingPipeline:
         data_load = DataIngestion(config=data_load_config)
         data_load.download_file(data_load_config.source_train_url)
         data_load.download_file(data_load_config.source_test_url)
+
+if __name__ == '__main__':
+    try:
+        logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
+        obj = DataIngestionTrainingPipeline()
+        obj.main()
+        logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+    except Exception as e:
+        logger.exception(e)
+        raise e

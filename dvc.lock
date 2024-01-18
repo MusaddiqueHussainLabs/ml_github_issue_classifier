@@ -1,0 +1,22 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/github_labeler/pipelines/data_pipeline.py
+    deps:
+    - path: src/github_labeler/core/config.yaml
+      hash: md5
+      md5: d4b08ebf2f53415ad9588360a281eeff
+      size: 408
+    - path: src/github_labeler/pipelines/data_pipeline.py
+      hash: md5
+      md5: 3332151a498a0c796bbad4d8aaaf9e0c
+      size: 1327
+    outs:
+    - path: data/processed/github_issues_test.tsv
+      hash: md5
+      md5: 2e74bf13d46f7bb3971f5378737d12d9
+      size: 4497246
+    - path: data/processed/github_issues_train.tsv
+      hash: md5
+      md5: 9b7549a728167f62124e02c805ffa2d4
+      size: 15391154
