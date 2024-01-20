@@ -21,10 +21,8 @@ class ConfigurationManager:
 
         data_load_config = DataIngestionConfig(
             root_dir=config.root_dir,
-            source_train_url=config.source_train_url,
-            source_test_url=config.source_test_url,
-            local_train_file=config.local_train_file,
-            local_test_file=config.local_test_file
+            source_url=config.source_url,
+            local_data_file=config.local_data_file
         )
 
         return data_load_config

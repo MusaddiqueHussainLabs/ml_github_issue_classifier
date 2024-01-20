@@ -1,8 +1,6 @@
 data_root: data
 
 data_ingestion:
-  root_dir: data/processed
-  source_train_url: https://raw.githubusercontent.com/MusaddiqueHussainLabs/datasets/main/github_issues_train.tsv
-  source_test_url: https://raw.githubusercontent.com/MusaddiqueHussainLabs/datasets/main/github_issues_test.tsv
-  local_train_file: data/processed/github_issues_train.tsv
-  local_test_file: data/processed/github_issues_test.tsv
+  root_dir: data/raw
+  source_url: https://raw.githubusercontent.com/MusaddiqueHussainLabs/datasets/main/github_issues_full.tsv
+  local_data_file: data/raw/github_issues_full.tsv

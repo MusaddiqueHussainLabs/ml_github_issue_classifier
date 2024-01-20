@@ -11,18 +11,12 @@ class DataIngestion:
     def __init__(self, config: DataIngestionConfig):
         self.config = config
 
-    def download_file(self, source_url):
-        if not os.path.exists(self.config.local_train_file):
+    def download_file(self):
+        if not os.path.exists(self.config.local_data_file):
             filename, headers = request.urlretrieve(
-                url = source_url,
-                filename = self.config.local_train_file
-            )
-            logger.info(f"{filename} download! with following info: \n{headers}")
-        elif not os.path.exists(self.config.local_test_file):
-            filename, headers = request.urlretrieve(
-                url = source_url,
-                filename = self.config.local_test_file
+                url = self.config.source_url,
+                filename = self.config.local_data_file
             )
             logger.info(f"{filename} download! with following info: \n{headers}")
         else:
-            logger.info("File already exists...")
+            logger.info(f"File already exists of size: {get_size(Path(self.config.local_data_file))}")

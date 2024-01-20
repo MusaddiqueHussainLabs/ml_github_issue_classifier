@@ -19,8 +19,7 @@ class DataIngestionTrainingPipeline:
         config = ConfigurationManager()
         data_load_config = config.get_data_ingestion_config()
         data_load = DataIngestion(config=data_load_config)
-        data_load.download_file(data_load_config.source_train_url)
-        data_load.download_file(data_load_config.source_test_url)
+        data_load.download_file()
 
 if __name__ == '__main__':
     try:
